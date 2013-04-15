@@ -1,3 +1,11 @@
+﻿/*!
+* jQuery Mobile Framework : header title scroller plugin
+* Copyright (c) e-media, snc
+* Authored by Luca Osrini, orsinil@inwind.it
+* Dual licensed under the MIT or GPL Version 2 licenses.
+*/
+
+﻿
 ﻿function realWidth(cnt) {
     var $objTmp = cnt.clone().contents().wrap('<div id="content" style="padding-left:5px;position: absolute;overflow: hidden;text-overflow: ellipsis;"/>').parent().appendTo(".ui-title");
     var res = $objTmp.width() + 10;
@@ -27,9 +35,7 @@ $(document).bind("pageshow", function (event, ui) {
     var time = parseInt((deltaDistanza / 100) * 2100, 10);
 
     if (deltaDistanza > 0 && cnt.length > 0) {
-        //Gradient divs
         var _header = curPage.find(".ui-header");
-
         var _styleSfum = "background-position:-" + $(cnt).position().top + "px;background-size:1px " + _header.height() + "px;position:relative;width:1px;z-index:1;border:none !important;height:" + $(cnt).height() + "px;";
 
         var scroller = $(cnt).contents().wrap('<div id="content" style="padding-left:5px;position: absolute;overflow: hidden;">').parent();
